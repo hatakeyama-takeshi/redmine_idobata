@@ -29,7 +29,8 @@ class IdobataHookListener < Redmine::Hook::Listener
     text    = "[#{escape project.name}] #{author} updated <a href=\"#{url}\">##{issue.id} #{subject}</a>"
     text   += "<br/><blockquote>#{truncate comment.gsub(/(\r\n|\r|\n)/, '<br/>')}</blockquote>" unless comment.blank?
 
-    notify(text, project)
+#    通知しない
+#    notify(text, project)
   end
 
   def controller_wiki_edit_after_save(context = {})
@@ -42,7 +43,8 @@ class IdobataHookListener < Redmine::Hook::Listener
     url     = get_url(page)
     text    = "[#{escape project.name}] #{author} edited wiki page <a href=\"#{url}\">#{escape page.pretty_title}</a>"
 
-    notify(text, project)
+#    通知しない
+#    notify(text, project)
   end
 
   def controller_messages_new_after_save(context = {})
@@ -58,7 +60,8 @@ class IdobataHookListener < Redmine::Hook::Listener
     text    = "[#{escape project.name}] #{author} posted new message <a href=\"#{url}\">#{escape subject}</a>"
     text   += "<br/><blockquote>#{truncate comment.gsub(/(\r\n|\r|\n)/, '<br/>')}</blockquote>" unless comment.blank?
 
-    notify(text, project)
+#    通知しない
+#    notify(text, project)
   end
 
   def controller_messages_reply_after_save(context = {})
@@ -74,7 +77,8 @@ class IdobataHookListener < Redmine::Hook::Listener
     text    = "[#{escape project.name}] #{author} posted reply message <a href=\"#{url}\">#{escape subject}</a>"
     text   += "<br/><blockquote>#{truncate comment.gsub(/(\r\n|\r|\n)/, '<br/>')}</blockquote>" unless comment.blank?
 
-    notify(text, project)
+#    通知しない
+#    notify(text, project)
   end
 
   private
